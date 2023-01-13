@@ -8,8 +8,8 @@ class Storage {
   constructor(value, storage = STORAGE.LOCAL) {
     this.key = value;
     this.storage = storage;
-    this.isValid = this.storage === STORAGE.LOCAL;
-    if (this.isValid) {
+    this.isLocal = this.storage === STORAGE.LOCAL;
+    if (this.isLocal) {
       localStorage.setItem(this.key, undefined);
     } else {
       sessionStorage.setItem(this.key, undefined);
@@ -17,7 +17,7 @@ class Storage {
   }
 
   get() {
-    if (this.isValid) {
+    if (this.isLocal) {
       return localStorage.getItem(this.key);
     } else {
       return sessionStorage.getItem(this.key);
@@ -25,7 +25,7 @@ class Storage {
   }
 
   set(value) {
-    if (this.isValid) {
+    if (this.isLocal) {
       localStorage.setItem(this.key, value);
     } else {
       sessionStorage.setItem(this.key, value);
@@ -33,7 +33,7 @@ class Storage {
   }
 
   clear() {
-    if (this.isValid) {
+    if (this.isLocal) {
       localStorage.setItem(this.key, undefined);
     } else {
       sessionStorage.setItem(this.key, undefined);
@@ -49,5 +49,5 @@ class Storage {
   }
 }
 
-let user = new Storage('Vadim', STORAGE.LOCAL);
-let user3 = new Storage('Ufsduif', STORAGE.SESSION)
+let userOne = new Storage('OneUser', STORAGE.LOCAL);
+let userTwo = new Storage('TwoUser', STORAGE.SESSION);
