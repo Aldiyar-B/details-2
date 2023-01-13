@@ -1,47 +1,53 @@
 const STORAGE = {
-  LOCAL: localStorage,
-  SESSION: sessionStorage,
-  DEFAULT: localStorage,
+  LOCAL: 'localStorage',
+  SESSION: 'sessionStorage',
 }
 
 class Storage {
-  constructor(key, storage = STORAGE.DEFAULT) {
-    this.key = key;
+
+  constructor(value, storage = STORAGE.LOCAL) {
+    this.key = value;
     this.storage = storage;
-    this.storage.setItem(key, null)
+    this.isValid = this.storage === STORAGE.LOCAL;
+    if (this.isValid) {
+      localStorage.setItem(this.key, undefined);
+    } else {
+      sessionStorage.setItem(this.key, undefined);
+    }
   }
 
-  getKey() {
-    return this.storage.getItem(this.key)
+  get() {
+    if (this.isValid) {
+      return localStorage.getItem(this.key);
+    } else {
+      return sessionStorage.getItem(this.key);
+    }
   }
 
-  setKey(value) {
-    this.storage.setItem(this.key, value);
+  set(value) {
+    if (this.isValid) {
+      localStorage.setItem(this.key, value);
+    } else {
+      sessionStorage.setItem(this.key, value);
+    }
   }
 
   clear() {
-    this.storage.setItem(this.key, null);
+    if (this.isValid) {
+      localStorage.setItem(this.key, undefined);
+    } else {
+      sessionStorage.setItem(this.key, undefined);
+    }
   }
 
   isEmpty() {
-    const value = this.getKey();
-    if (value === 'null') {
+    const value = this.get();
+    if (value === 'undefined') {
       return true;
     }
     return false;
   }
 }
 
-const moscow = new Storage('moscow', STORAGE.LOCAL);
-const bali = new Storage('Bali', STORAGE.SESSION);
-const minsk = new Storage('Minsk')
-
-
-moscow.setKey('blabla');
-console.log(moscow.getKey());
-bali.setKey('Baaaaaaaaali');
-console.log(minsk.isEmpty());
-console.log(bali.isEmpty());
-console.log(bali.getKey());
-moscow.clear();
-console.log(moscow.getKey());
+let user = new Storage('Vadim', STORAGE.LOCAL);
+let user3 = new Storage('Ufsduif', STORAGE.SESSION)
