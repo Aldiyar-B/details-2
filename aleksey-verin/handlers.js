@@ -5,9 +5,16 @@ import {
   colors,
   defaultDataForUI,
   renderForContent,
+  colorsStorage,
+  dataForUIStorage,
+  // langStorage,
 } from './index.js'
+import { STORAGE } from './storage.js'
+import { Storage } from './storage.js'
 
-export let lang = JSON.parse(localStorage.getItem('lang')) //===>><<===
+export const langStorage = new Storage('lang', STORAGE.LOCAL)
+
+export let lang = langStorage.get() //===>><<===
 if (!lang) {
   lang = 'eng'
 }
@@ -30,7 +37,7 @@ function changeColor() {
   }
   UI_ELEMENTS.BODY.style.background =
     'linear-gradient(45deg, ' + colors.color1 + ', ' + colors.color2 + ')'
-  localStorage.setItem('colors', JSON.stringify(colors)) // <<======>>
+  colorsStorage.set(colors) // <<======>>
 }
 
 UI_ELEMENTS.BUTTONS.buttonEdit.addEventListener('click', showModalWindowForEdit)
@@ -58,7 +65,7 @@ function makeChanges(event) {
   UI_ELEMENTS.TITLE.textContent = dataForUI.title
   UI_ELEMENTS.MODAL_WINDOW.container.classList.remove('active')
 
-  localStorage.setItem('dataForUI', JSON.stringify(dataForUI)) // <<======>>
+  dataForUIStorage.set(dataForUI) // <<======>>
 }
 
 UI_ELEMENTS.MODAL_WINDOW.resetButton.addEventListener(
@@ -70,7 +77,7 @@ function resetTitleAndDate() {
   dataForUI.title = CONTENT.title[lang]
   dataForUI.time = defaultDataForUI.time
   dataForUI.date = defaultDataForUI.date
-  localStorage.setItem('dataForUI', JSON.stringify(dataForUI)) // <<======>>
+  dataForUIStorage.set(dataForUI) // <<======>>
 
   UI_ELEMENTS.TITLE.textContent = CONTENT.title[lang]
   UI_ELEMENTS.MODAL_WINDOW.inputForTitle.value = CONTENT.title[lang]
@@ -96,6 +103,6 @@ function changeLanguage(e) {
   })
   e.target.classList.add('active')
   lang = e.target.dataset.lang
-  localStorage.setItem('lang', JSON.stringify(lang)) // <<======>>
+  langStorage.set(lang) // <<======>>
   renderForContent(lang)
 }

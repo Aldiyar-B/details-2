@@ -1,13 +1,18 @@
 import UI_ELEMENTS from './ui-elements.js'
 import CONTENT from './content.js'
 import { lang } from './handlers.js'
+import { STORAGE } from './storage.js'
+import { Storage } from './storage.js'
+
+export const colorsStorage = new Storage('colors', STORAGE.LOCAL)
+export const dataForUIStorage = new Storage('dataForUI', STORAGE.LOCAL)
 
 export const defaultDataForUI = {
   time: '00:00',
   date: `${new Date().getFullYear() + 1}-01-01`,
 }
 
-export let colors = JSON.parse(localStorage.getItem('colors')) //===>><<===
+export let colors = colorsStorage.get() //===>><<===
 if (!colors) {
   colors = {
     color1: '#000',
@@ -17,7 +22,7 @@ if (!colors) {
 UI_ELEMENTS.BODY.style.background =
   'linear-gradient(45deg, ' + colors.color1 + ', ' + colors.color2 + ')'
 
-export let dataForUI = JSON.parse(localStorage.getItem('dataForUI')) //===>><<===
+export let dataForUI = dataForUIStorage.get() //===>><<===
 if (!dataForUI) {
   dataForUI = {}
   dataForUI.title = CONTENT.title.eng
