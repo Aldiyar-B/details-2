@@ -34,7 +34,7 @@ class Storage {
             return true;
         }
        
-        false;
+        return false;
     
     }
 }
