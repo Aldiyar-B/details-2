@@ -5,60 +5,36 @@ const STORAGE = {
 
 class Storage {
 
-  constructor(value, storage = STORAGE.LOCAL) {
-    this.key = value;
+  constructor(storage = STORAGE.LOCAL, key, value = 'default') {
+    this.key = key;
+    this.value = value;
     this.storage = storage;
-    this.isLocal = this.storage === STORAGE.LOCAL;
-    if (this.isLocal) {
-      localStorage.setItem(this.key, undefined);
-    } else {
-      sessionStorage.setItem(this.key, undefined);
-    }
+    this.set(value);
   }
 
   get() {
-    if (this.isLocal) {
-      return localStorage.getItem(this.key);
-    } else {
-      return sessionStorage.getItem(this.key);
-    }
+    return globalThis[this.storage].getItem(this.key);
   }
 
   set(value) {
-    if (this.isLocal) {
-      localStorage.setItem(this.key, value);
-    } else {
-      sessionStorage.setItem(this.key, value);
-    }
+    globalThis[this.storage].setItem(this.key, value);
   }
 
   clear() {
-    if (this.isLocal) {
-      localStorage.setItem(this.key, undefined);
-    } else {
-      sessionStorage.setItem(this.key, undefined);
-    }
+    globalThis[this.storage].setItem(this.key, '');
   }
 
   isEmpty() {
-    const value = this.get();
-    if (value === 'undefined') {
-      return true;
-    }
-    return false;
+    return this.get() ? false : true;
   }
 }
 
-let userOne = new Storage('OneUser', STORAGE.LOCAL);
-let userTwo = new Storage('TwoUser', STORAGE.SESSION);
-console.log(userOne);
-console.log(userTwo);
-userOne.set('oneoneone');
-userTwo.set('twotwotwo');
-console.log(userOne.get());
-console.log(userTwo.get());
-userOne.clear();
-console.log(userOne.get());
-console.log(userTwo.get());
-console.log(userOne.isEmpty());
-console.log(userTwo.isEmpty());
+// Tests
+// let userOne = new Storage(STORAGE.LOCAL, 'OneUser');
+// let userTwo = new Storage(STORAGE.SESSION, 'TwoUser', 'test');
+
+// console.log(userOne);
+// console.log(userTwo);
+// userOne.set('hahaha');
+// userTwo.clear();
+// console.log(userTwo.isEmpty());
