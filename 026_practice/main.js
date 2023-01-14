@@ -2,8 +2,8 @@ class Storage {
 	constructor(key, value, typeStorage = localStorage) {
 		this.key = key;
 		this.value = value;
-		this.storage = typeStorage;
 		this.set(value);
+		this.storage = typeStorage;
 	}
 	get() {
 		return JSON.parse(this.storage.getItem(this.key));
