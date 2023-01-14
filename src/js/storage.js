@@ -17,7 +17,6 @@ class Storage {
     const data = typeof value !== 'string'
       ? Storage.convertSetIntoJson(value)
       : value;
-    this.value = this.get();
     return this.storage.setItem(this.key, data);
   }
 
@@ -26,6 +25,7 @@ class Storage {
   }
 
   isEmpty() {
+    this.value = this.get();
     return this.value === null || this.value === undefined;
   }
 
