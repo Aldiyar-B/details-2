@@ -1,5 +1,5 @@
 class Storage {
-  constructor(key, value, storage) {
+  constructor(key, value, storage = localStorage) {
     this.key = key;
     this.value = value;
     this.storage = storage;
@@ -22,4 +22,3 @@ class Storage {
 const names = new Storage("names", "Test", sessionStorage);
 names.get();
 names.set();
-names.isEmpty();
