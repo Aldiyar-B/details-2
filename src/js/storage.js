@@ -6,16 +6,19 @@ class Storage {
       : sessionStorage;
   }
 
-  get(value = Storage.option.city) {
-    return value === Storage.option.city
-      ? this.storage.getItem(this.key)
-      : new Set(JSON.parse(this.storage.getItem(this.key)));
+  get() {
+    const value = this.storage.getItem(this.key);
+    return this.key === Storage.option.favorites
+      ? Storage.convertJsonIntoSet(value)
+      : value;
   }
 
   set(value = Storage.option.startCity) {
-    return typeof value === 'string'
-      ? this.storage.setItem(this.key, value)
-      : this.storage.setItem(this.key, JSON.stringify(Array.from(value)));
+    const data = typeof value !== 'string'
+      ? Storage.convertSetIntoJson(value)
+      : value;
+    this.value = this.get();
+    return this.storage.setItem(this.key, data);
   }
 
   clear() {
@@ -23,7 +26,15 @@ class Storage {
   }
 
   isEmpty() {
-    return this.get() === null || this.get() === undefined;
+    return this.value === null || this.value === undefined;
+  }
+
+  static convertJsonIntoSet(value) {
+    return new Set(JSON.parse(value));
+  }
+
+  static convertSetIntoJson(value) {
+    return JSON.stringify(Array.from(value));
   }
 
   static option = {

@@ -1,5 +1,5 @@
-import ELEMENT from './ui';
 import BasicWeather from './conversion';
+import ELEMENT from './ui';
 
 class Weather extends BasicWeather {
   updateWeatherData() {
