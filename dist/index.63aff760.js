@@ -535,8 +535,8 @@ function hmrAcceptRun(bundle, id) {
 var _storageJs = require("./storage.js");
 var _dateFns = require("date-fns");
 (0, _dateFns.format)(new Date(2014, 1, 11), "MM/dd/yyyy");
-console.log((0, _dateFns.format)(new Date(2014, 1, 11), "MM/dd/yyyy"));
-//=> '02/11/2014'
+console.log((0, _dateFns.format)(new Date(2014, 1, 11), "dd MMMMMM"));
+//=> '11 February'
 const UI_ELEMENTS = {
     FORM: document.querySelector(".weather__form"),
     INPUT: document.querySelector(".weather__input"),
@@ -664,9 +664,13 @@ function getTime(data) {
     let time = new Date(data);
     let hours = time.getHours();
     let minutes = time.getMinutes();
-    if (hours < 10) hours = `0${hours}`;
-    if (minutes < 10) minutes = `0${minutes}`;
-    return `${hours}:${minutes}`;
+    /*if (hours < 10) {
+		hours = `0${hours}`;
+	}
+	if (minutes < 10) {
+		minutes = `0${minutes}`;
+	}*/ let timeNow = (0, _dateFns.format)(new Date(2023, 0, 1, hours, minutes), "HH:mm");
+    return timeNow; //`${hours}:${minutes}`
 }
 function getIconWeather(data) {
     const icon = data.weather[0].icon;
@@ -780,7 +784,7 @@ forecast
 http://api.openweathermap.org/data/2.5/forecast
 */ 
 
-},{"./storage.js":"kS9sU","date-fns":"9yHCA"}],"9yHCA":[function(require,module,exports) {
+},{"date-fns":"9yHCA","./storage.js":"kS9sU"}],"9yHCA":[function(require,module,exports) {
 // This file is generated automatically by `scripts/build/indices.ts`. Please, don't change it.
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
@@ -3647,6 +3651,45 @@ var secondsInWeek = secondsInDay * 7;
 var secondsInYear = secondsInDay * daysInYear;
 var secondsInMonth = secondsInYear / 12;
 var secondsInQuarter = secondsInMonth * 3;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kS9sU":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "storage", ()=>storage);
+const storage = {
+    saveFavoriteCities: function(favoriteCities) {
+        //отправляю строку в виде массива городов в хранилище
+        const jsonCities = JSON.stringify(favoriteCities);
+        localStorage.setItem("favoriteCities", jsonCities);
+    },
+    getFavoriteCities: function() {
+        const localCities = localStorage.getItem("favoriteCities");
+        let currentList = [];
+        //let setCurrentCities = new Set();
+        if (localCities) currentList = JSON.parse(localCities);
+        //return setCurrentCities;
+        return currentList;
+    },
+    addLastCityName: function(cityName) {
+        localStorage.setItem("lastCity", cityName);
+    },
+    getLastCityName: function() {
+        const lastCity = localStorage.getItem("lastCity");
+        return lastCity;
+    },
+    clear: function() {
+        localStorage.clear();
+    }
+} /*
+Объекты хранилища localStorage и sessionStorage предоставляют одинаковые методы и свойства:
+
+setItem(key, value) – сохранить пару ключ/значение.
+getItem(key) – получить данные по ключу key.
+removeItem(key) – удалить данные с ключом key.
+clear() – удалить всё.
+key(index) – получить ключ на заданной позиции.
+length – количество элементов в хранилище.
+*/ ;
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["1JEHZ","adjPd"], "adjPd", "parcelRequirecf37")
 

@@ -3,8 +3,10 @@ import { storage } from './storage.js';
 import { format } from 'date-fns';
 
 format(new Date(2014, 1, 11), 'MM/dd/yyyy');
-console.log(format(new Date(2014, 1, 11), 'MM/dd/yyyy'));
-//=> '02/11/2014'
+console.log(format(new Date(2014, 1, 11), 'dd MMMMMM'));
+//=> '11 February'
+
+
 
 const UI_ELEMENTS = {
 	FORM: document.querySelector('.weather__form'),
@@ -183,14 +185,14 @@ function getTime(data) {
 	let time = new Date(data);
 	let hours = time.getHours();
 	let minutes = time.getMinutes();
-	if (hours < 10) {
+	/*if (hours < 10) {
 		hours = `0${hours}`;
 	}
 	if (minutes < 10) {
 		minutes = `0${minutes}`;
-	}
-	
-	return `${hours}:${minutes}`
+	}*/
+	let timeNow = format(new Date(2023, 0, 1, hours,minutes), 'HH:mm');
+	return timeNow;//`${hours}:${minutes}`
 }
 
 function getIconWeather(data) {
