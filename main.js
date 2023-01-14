@@ -51,3 +51,14 @@ class Storage {
 
 let userOne = new Storage('OneUser', STORAGE.LOCAL);
 let userTwo = new Storage('TwoUser', STORAGE.SESSION);
+console.log(userOne);
+console.log(userTwo);
+userOne.set('oneoneone');
+userTwo.set('twotwotwo');
+console.log(userOne.get());
+console.log(userTwo.get());
+userOne.clear();
+console.log(userOne.get());
+console.log(userTwo.get());
+console.log(userOne.isEmpty());
+console.log(userTwo.isEmpty());
