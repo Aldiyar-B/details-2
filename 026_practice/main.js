@@ -1,7 +1,9 @@
 class Storage {
-	constructor(key, typeStorage = localStorage) {
+	constructor(key, value, typeStorage = localStorage) {
 		this.key = key;
+		this.value = value;
 		this.storage = typeStorage;
+		this.set(value);
 	}
 	get() {
 		return JSON.parse(this.storage.getItem(this.key));
@@ -22,6 +24,5 @@ class Storage {
 	}
 }
 
-const tesla = new Storage('color', sessionStorage);
-tesla.set('black');
+const tesla = new Storage('color', 'black', sessionStorage);
 
