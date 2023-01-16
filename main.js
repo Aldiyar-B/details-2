@@ -29,10 +29,10 @@ const surnumes = new Storage('surnumes', 'sessionStorage');
 const names = new Storage('names');
 
 names.set('Ivan');
-names.clear();
+//names.clear();
 names.isEmpty();
 names.get();
 surnumes.set('Ivanov');
-surnumes.clear();
+//surnumes.clear();
 surnumes.isEmpty();
 surnumes.get();
