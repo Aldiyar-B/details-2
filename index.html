@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>19. Timer </title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <form action="" method="get" class="date__form">
+                
+                <input type="datetime-local" id="date" class="date__input" name="timer"
+                    value="2023-01-18T00:00" min="1000-01-01T00:00" max="2999-12-31T23:59">
+                <button class="date__button" type="submit"> Enter the date </button>
+                <label for="date" class="date__label">Time until your date:</label>
+            </form>
+            <div class="result"></div>
+        </div>
+    </div>
+    <script src="./index.js" type="module"></script>
+</body>
+</html>
