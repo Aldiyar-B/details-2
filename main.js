@@ -25,14 +25,14 @@ class Storage {
     }
 }
 
-const surnumes = new Storage('surnumes', 'sessionStorage');
 const names = new Storage('names');
+const surnumes = new Storage('surnumes', 'sessionStorage');
 
 names.set('Ivan');
 //names.clear();
 names.isEmpty();
 names.get();
-surnumes.set('Ivanov');
+//surnumes.set('Ivanov');
 //surnumes.clear();
-surnumes.isEmpty();
-surnumes.get();
+//surnumes.isEmpty();
+//surnumes.get();
