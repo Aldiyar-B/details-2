@@ -62,12 +62,18 @@ function addTask(event, priority, input, priorityList) {
     span.textContent = newTask.name;
     label.append(span);
 
+    const date = new Date();
+    const normalDate = date.toLocaleString();
+    const time = document.createElement("span");
+    time.classList = "time"
+    time.textContent = normalDate;
+    label.append(time);
+
     taskContent.append(label);
 
     const button = document.createElement("button");
     button.classList = "todo__icon-delete";
     button.dataset.action = "delete";
-    button.textContent = "X";
 
     task.append(button);
     priorityList.append(task);
