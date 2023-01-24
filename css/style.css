@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 1000px;
+  height: 700px;
+  position: relative;
+  background-image: url(../images/ball-bg.png);
+  background-position: center center;
+  background-size: cover;
+  border-radius: 15px;
+}
+
+.ball {
+  width: 60px;
+  height: 60px;
+  background-image: url(../images/ball.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  transition: all 0.3s;
+}
+
+.list {}
+
+.list__item {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px 10px;
+  cursor: pointer;
+}
+
+.list__item.active {
+  background-color: #5eff00;
+}
