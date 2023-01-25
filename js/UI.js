@@ -1,4 +1,5 @@
 export const UI_ELEMENTS = {
+  MODALS_CONTENT: document.querySelector('.modals__content'),
   MODALS_SETTINGS_BTN: document.querySelector('.chat__top-btn--setings'),
   MODALS_SETTINGS: document.querySelector('.modals__settings'),
   MODALS: document.querySelector('.modals'),

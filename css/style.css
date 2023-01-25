@@ -59,21 +59,32 @@ body {
   border-radius: 3px;
   margin-bottom: 7px;
   padding: 8px;
-  text-align: right;
+
 }
 
 .chat__content-items--right {
   align-self: flex-end;
+  text-align: right;
 }
 
 .chat__content-items--left {
   align-self: flex-start;
+  text-align: left;
 }
 
 .chat__content-items {
   background-color: #E5E5E5;
   padding: 8px;
   margin-bottom: 8px;
+}
+
+.chat__content-item-text {
+  color: #000;
+  margin-bottom: 2px;
+}
+
+.chat__content-item-time {
+  color: #333333;
 }
 
 .chat__content-items--unread {
@@ -203,8 +214,9 @@ body {
   box-sizing: border-box;
   width: 100%;
   margin-top: 5px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   padding: 7px;
+  border: 1px solid #c5c5c5;
 }
 
 .modals__btn {
