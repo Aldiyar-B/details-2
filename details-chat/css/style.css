@@ -1,0 +1,205 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #000000;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+.main {
+  width: 320px;
+  height: 533px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid #333;
+}
+
+.header {
+  padding: 9px 9px 0px 9px;
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header--btn {
+  padding: 0;
+  border: none;
+  background-color: #fff;
+  padding: 6px 8px;
+  border: 1px solid #333;
+  cursor: pointer;
+}
+
+.header--btn:hover {
+  background-color: rgb(181, 175, 175);
+  transition: 0.3s;
+}
+
+/* Chat =========================*/
+
+.chat {
+  width: 304px;
+  height: 437px;
+  border: 1px solid #333;
+  margin: 8px;
+}
+
+.chat__inner {
+  padding: 8px;
+}
+
+.message {
+  background-color: #e5e5e5;
+  padding: 8px;
+  margin-top: 8px;
+}
+
+.message__content {
+  display: flex;
+}
+
+.from--me {
+  float: right;
+}
+
+.from--companion {
+  float: left;
+}
+
+.sent--color {
+  background-color: #f7f7f7;
+}
+
+.message__content {
+  margin-bottom: 4px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+
+  color: #000000;
+}
+
+.message__time {
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: #333333;
+  float: right;
+}
+
+/* Send =========================*/
+
+.send__inner {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 8px 8px 8px;
+}
+
+.send__input {
+  flex-basis: 267px;
+  height: 32px;
+  padding: 8px;
+  border: 1px solid #000000;
+}
+
+.send__btn {
+  padding: 6px;
+  border: 1px solid #333;
+  background-color: #fff;
+  height: 32px;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  cursor: pointer;
+}
+
+/* Popup =========================*/
+
+.title__settings {
+  margin-bottom: 16px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.title__nickname {
+  margin-bottom: 8px;
+}
+
+.popup__bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s all;
+}
+
+.popup__bg.active {
+  opacity: 1;
+  pointer-events: all;
+  transition: 0.5s all;
+}
+
+.popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  width: 273px;
+  height: 320px;
+  padding: 15px;
+}
+
+.popup__input {
+  width: 207px;
+  height: 32px;
+  border: 1px solid #000000;
+}
+
+.popup__label {
+  display: flex;
+  justify-content: space-between;
+}
+
+.close__btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+
+/* .send__nickname {
+  padding-top: 5px;
+  padding-bottom: 6px;
+} */

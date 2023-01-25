@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="header">
+        <div class="header__inner">
+          <div class="settings">
+            <button class="settings__button header--btn">Настройки</button>
+          </div>
+          <div class="logout">
+            <button class="logout__button header--btn">Выйти</button>
+          </div>
+        </div>
+      </div>
+      <div class="chat">
+        <div class="chat__inner">
+          <div class="message from--me">
+            <div class="message__content">
+              <div class="message__name">Я:&nbsp</div>
+              <div class="message__text">Доброе утро!</div>
+            </div>
+            <span class="message__time">18:45</span>
+          </div>
+          <div class="message from--companion">
+            <div class="message__content">
+              <div class="message__name">Собеседник:&nbsp</div>
+              <div class="message__text">Доброе утро!</div>
+            </div>
+            <span class="message__time">18:45</span>
+          </div>
+          <div class="message from--companion">
+            <div class="message__content">
+              <div class="message__name">Собеседник:&nbsp</div>
+              <div class="message__text">
+                А это второе и, кажется, оно очень длинное, чтобы поместиться на одной строке
+              </div>
+            </div>
+            <span class="message__time">18:45</span>
+          </div>
+          <div class="message from--me sent--color">
+            <div class="message__content">
+              <div class="message__name">Я:&nbsp</div>
+              <div class="message__text">Добрый день!!</div>
+            </div>
+            <span class="message__time">18:45</span>
+          </div>
+        </div>
+        <!-- /chat__inner-->
+      </div>
+      <div class="send">
+        <div class="send__inner">
+          <input class="send__input" type="text" placeholder="сообщение.." />
+          <button class="send__btn">-></button>
+        </div>
+      </div>
+
+      <div class="popup__bg">
+        <form class="popup">
+          <h3 class="title__settings">Настройки</h3>
+          <img class="close__btn" src="images/delete-icon.svg" alt="" />
+          <div class="title__nickname">Имя в чате</div>
+          <label class="popup__label">
+            <input class="popup__input" type="text" name="name" placeholder="введите имя" />
+            <button class="send__btn send__nickname">-></button>
+          </label>
+        </form>
+      </div>
+    </div>
+    <!-- /main-->
+    <script src="js/main.js"></script>
+  </body>
+</html>
