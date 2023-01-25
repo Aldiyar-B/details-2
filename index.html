@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>Chat</title>
+</head>
+
+<body>
+  <div class="bg-container">
+    <div class="chat">
+      <div class="chat__top">
+        <button class="chat__top-btn chat__top-btn--setings" type="button">Настройки</button>
+        <button class="chat__top-btn chat__top-btn--login" type="button">Войти</button>
+      </div>
+      <div class="chat__content">
+        <div class="chat__content-items chat__content-items--right">
+          <div class="chat__content-item-text">Я: Добрый день!</div>
+          <div class="chat__content-item-time">18:45</div>
+        </div>
+        <div class="chat__content-items chat__content-items--left">
+          <div class="chat__content-item-text">Собеседник мой: Добрый день!</div>
+          <div class="chat__content-item-time">18:45</div>
+        </div>
+        <div class="chat__content-items chat__content-items--left">
+          <div class="chat__content-item-text">Собеседник мой: А это второе и, кажется, оно очень
+            длинное, чтобы поместиться на
+            одной строке</div>
+          <div class="chat__content-item-time">18:45</div>
+        </div>
+        <div class="chat__content-items chat__content-items--right chat__content-items--unread">
+          <div class="chat__content-item-text">Я: Добрый день!</div>
+          <div class="chat__content-item-time">18:45</div>
+        </div>
+      </div>
+      <div class="chat__message">
+        <form class="chat__message-form" action="#">
+          <input class="chat__message-input" type="text" placeholder="сообщение...">
+          <button class="chat__message-btn" type="submit">Отправить</button>
+        </form>
+      </div>
+      <!-- modals -->
+      <div class="modals">
+        <div class="modals__overlay">
+          <div class="modals__content modals__settings">
+            <button class="modals__close-btn" type="button">Закрыть</button>
+            <h3 class="modals__title">Настройки</h2>
+              <form class="modals__form modals__settings-form" action="#">
+                <label>Имя в чате
+                  <input class="modals__input" type="text" placeholder="Введите имя">
+                </label>
+                <button class="modals__btn" type="submit">Отправить</button>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="js/main.js"></script>
+</body>
+
+</html>
