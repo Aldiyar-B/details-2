@@ -39,6 +39,7 @@ body {
   justify-content: space-between;
   background-color: #4C627D;
   margin: -8px;
+  margin-top: -10px;
   margin-bottom: 8px;
   padding: 8px;
   z-index: 1;
@@ -57,6 +58,10 @@ body {
 .chat__content-wrapper {
   overflow: auto;
   height: 100vh;
+}
+
+.chat__content-wrapper::-webkit-scrollbar {
+  width: 0;
 }
 
 .chat__content {
@@ -105,13 +110,13 @@ body {
   background-color: #4C627D;
   padding: 8px;
   margin: -8px;
+  margin-bottom: -10px;
 }
 
 .chat__message-form {
   display: flex;
   justify-content: space-between;
 }
-
 
 .chat__message-input {
   width: 100%;
