@@ -94,44 +94,123 @@ h6 {
 	align-items: center;
 	justify-content: center;
 	padding: 10px 0;
+	background-color: rgb(95, 121, 43);
+	min-height: 100%;
+	height: 1px;
 }
 
-.-text{
-	font-size: 14px;
-	font-weight: 500;
-	line-height: 150%;
-	letter-spacing: 0.5;
+.-container {
+	min-width: 100%;
 }
 
-.currency {
+.-close {}
+
+.-button {}
+
+/* popup */
+
+.popup {
+	display: none;
 	
 }
 
-.currency__form {
-	border: 1px solid yellowgreen;
-	margin: 0px 0px 10px 0px;
+.popup__flex {}
+
+.popup__block {}
+
+.popup__header {}
+
+.popup__title {}
+
+.popup__close {}
+
+.popup__body {}
+
+
+/* body */
+
+.chat {
+	background-color: rgb(21, 139, 168);
+	border: 1px solid blueviolet;
+	padding: 10px;
+	max-width: 900px;
+	width: 100%;
+	min-height: 100%;
+	height: 1px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
-.currency__line {
-	margin: 0px 0px 10px 0px;
-	
+.chat__container {
+	height: 100%;
+	max-height: 400px;
+	background-color: #fff;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
 }
 
-.currency__input {
-	text-align: center;
+.setting-chat {}
+
+.setting-chat__name {}
+
+.setting-chat__form {}
+
+.setting-chat__line {}
+
+.setting-chat__input-name {}
+
+.setting-chat__button {}
+
+/* .chat__wrapper {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+} */
+
+.chat__header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
+.chat__setting {}
 
+.chat__exit {}
 
-.currency__button {
-	background-color: rgba(220, 252, 147, 0.377);
-	display: block;
+.chat__body {
+	flex: 1 1 auto;
+}
+
+.chat__massege {}
+
+.massage {}
+
+.massege__body {}
+
+.massage__name {}
+
+.massage__text {}
+
+.massage__time {}
+
+.chat__footer {}
+
+.chat__message-form {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.chat__message-line {
+	flex: 1 1 auto;
+}
+
+.chat__message {
 	width: 100%;
 }
 
-.currency__result {
-	background-color: rgba(220, 252, 147, 0.377);
-	padding: 3px;
-	text-align: center;
-}
+.chat__message-send {
 
+}

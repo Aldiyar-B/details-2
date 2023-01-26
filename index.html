@@ -4,29 +4,67 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="css/style.css">
 	<title>Document</title>
 </head>
 <body>
 	<div class="wrapper">
 		<!-- <header class="header"></header> -->
 		<main class="page">
-			<div class="currency">
-				<form action="#" class="currency__form">
-					<div class="currency__line">
-						<input type="text" placeholder="Введите валюту" value="15 usd in rub" class="currency__input -text">
+			<div class="chat">
+				<div class="chat__container -container">
+					<div class="popup" id="setting">
+						<div class="popup__flex">
+							<div class="popup__block">
+								<div class="popup__header">
+									<div class="popup__title">Настройки</div>
+									<div class="popup__close -close">X</div>
+								</div>
+								<div class="popup__body setting-chat">
+									<div class="setting-chat__name">Имя в чате</div>
+									<form action="#" class="setting-chat__form">
+										<div class="setting-chat__line">
+											<input type="text" placeholder="Введите имя" class="setting-chat__input-name">
+										</div>
+										<button class="setting-chat__button -button" type="submit">
+											->
+										</button>
+									</form>
+								</div>
+							</div>
+						</div>
 					</div>
-					<button class="currency__button -text" type="submit">
-						Перевести валюту
-					</button>
-				</form>
-				<div class="currency__result -text">
-					Результат
+					<!-- <div class="chat__wrapper"> -->
+						<div class="chat__header">
+							<a href="#setting" class="chat__setting -button">Настройки</a>
+							<a href="#" class="chat__exit -button">Выйти</a>
+						</div>
+						<div class="chat__body">
+							<div class="chat__massege massage">
+							
+							<!-- <template class="chat__template"> -->
+								<div class="massege__body">
+									<div class="massage__name">Я</div>
+									<div class="massage__text"> Добрый день</div>
+									<div class="massage__time">18:45</div>
+								</div>
+							<!-- </template> -->
+							</div>
+						</div>
+						<div class="chat__footer">
+							<form action="#" class="chat__message-form">
+								<div class="chat__message-line">
+									<input type="text" minlength="1" class="chat__message" placeholder="Сообщение">
+								</div>
+								<button class="chat__message-send -button" type="submit">-></button>
+							</form>
+						</div>
+					<!-- </div> -->
 				</div>
 			</div>
 		</main>
 		<!-- <footer class="footer"></footer> -->
 	</div>
-	<script type="module" src="./js/main.js"></script>
+	<script type="module" src="js/main.js"></script>
 </body>
 </html>
