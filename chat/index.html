@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Chat</title>
+</head>
+<body>
+<div class="main-wrapper">
+    <header class="main-control container">
+        <input type="button" class="main-control__setting" value="Настройки">
+        <input type="button" class="main-control__quit" value="Выйти">
+    </header>
+    <section class="display-chat container">
+        <h1 class="display-chat__title visually-hidden">Секретный чат СтоГрамм</h1>
+        <template class="my-message-template">
+            <div class="my-message">
+                <div class="my-message__wrapper">
+                    <div class="my-message__name">Я:</div>
+                    <div class="my-message__text"></div>
+                </div>
+                <div class="my-message__time">18:45</div>
+            </div>
+        </template>
+        <template class="partner-message-template">
+            <div class="partner-message">
+                <div class="partner-message__wrapper">
+                    <div class="partner-message__name">Собеседник мой:</div>
+                    <div class="partner-message__text">Добрый день!</div>
+                </div>
+                <div class="partner-message__time">18:45</div>
+            </div>
+        </template>
+        <!--        <div class="partner-message">-->
+        <!--            <div class="partner-message__name">Собеседник мой:</div>-->
+        <!--            <div class="partner-message__text">А это второе и, кажется, оно очень длинное, чтобы поместиться на одной-->
+        <!--                строке-->
+        <!--            </div>-->
+        <!--            <div class="partner-message__time">18:45</div>-->
+        <!--        </div>-->
+        <!--        <div class="my-message">-->
+        <!--            <div class="my-message__wrapper">-->
+        <!--                <div class="my-message__name">Я:</div>-->
+        <!--                <div class="my-message__text">Добрый день!</div>-->
+        <!--            </div>-->
+        <!--            <div class="my-message__time">18:45</div>-->
+        <!--        </div>-->
+    </section>
+    <section class="handler-form container">
+        <form class="form-message">
+            <label>
+                <input type="text" class="form-message__input-text" placeholder="сообщение..">
+            </label>
+            <button class="form-message__button-sent">-></button>
+        </form>
+    </section>
+    <div class="pop-up">
+        <div class="pop-up__container">
+            <div class="pop-up__body">
+                <div class="pop-up__title">Настройки</div>
+                <form class="pop-up__form">
+                    <label class="pop-up__label">Имя в чате<br>
+                        <input class="pop-up__get-name" type="text" placeholder="введите ваше имя или никнейм">
+                    </label>
+                    <button class="pop-up__form-button" type="submit">-></button>
+                </form>
+                <div class="pop-up__close">&#10006</div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="module" src="script.js"></script>
+</body>
+</html>
