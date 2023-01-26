@@ -42,7 +42,7 @@ export function showNewMessage(e) {
   const itemMessage = UI_ELEMENTS.TEMPLATE.content.cloneNode(true);
   const textMessage = itemMessage.querySelector('.chat__content-item-text');
   const timeMessage = itemMessage.querySelector('.chat__content-item-time');
-  if (textValue === '') {
+  if (textValue === '' || textValue.trim() === '') {
     return;
   }
   textMessage.textContent = textValue.trim();
