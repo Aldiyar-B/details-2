@@ -10,11 +10,11 @@ const backCount = ()=>{
     let mainDate = nowDate>myDate?nowDate-myDate:myDate-nowDate
     const oneDay = 1000 * 60 * 60 * 24; 
     const year = Math.floor(mainDate / 3.156e+10);
-    mainDate -= year * 3.156e+10;
+    mainDate %= 3.156e+10;
     const month = Math.floor(mainDate / 2.628e+9)
-    mainDate -= month*2.628e+9;
+    mainDate %= 2.628e+9;
     const diffInDays = Math.round(mainDate / oneDay); 
-    mainDate -= diffInDays * oneDay;
+    mainDate %=  oneDay;
     const hours = Math.round(mainDate/3.6e+6)
     result.textContent = `До этой даты
     ${year} лет

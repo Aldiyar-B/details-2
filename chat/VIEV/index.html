@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.scss">
+    <title>Document</title>
+</head>
+<body>
+    <main class = 'main'>
+        <div class="main-options">
+            <button class="main-options_settings">Настройки</button>
+            <button class="main-options_exit">Выйти</button>
+        </div>
+        <div class="main-view">
+            <div class="main-view-message sending user">
+                <div class="main-view-message_text"><span>Я:</span>Добрый день!</div>
+                <time class="main-view-message_time">18:45</time>
+            </div>
+            <div class="main-view-message delivered companion">
+                <div class="main-view-message_text"><span>Собеседник мой:</span> Добрый день!</div>
+                <time class="main-view-message_time">18:45</time>
+            </div>
+            <div class="main-view-message delivered companion">
+                <div class="main-view-message_text"><span>Собеседник мой:</span> А это второе и, кажется, оно очень 
+                    длинное, чтобы поместиться на 
+                    одной строке</div>
+                <time class="main-view-message_time">18:45</time>
+            </div>
+            <div class="main-view-message delivered user">
+                <div class="main-view-message_text"><span>Я:</span> Добрый день!</div>
+                <time class="main-view-message_time">18:45</time>
+            </div>
+        </div>
+        <form class="main-form">
+            <input class="main-form_input" type="text" placeholder="сообщение...">
+            <input class="main-form_button" type="submit" value="->">
+        </form>
+
+    </main>
+    <script type = "module" src="popup.js"></script>
+</body>
+</html>
