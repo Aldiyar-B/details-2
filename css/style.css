@@ -88,15 +88,19 @@ h6 {
 
 
 /*  */
-
+:root{
+	--text: white;
+}
 .page {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	padding: 10px 0;
-	background-color: rgb(95, 121, 43);
+	/* background-color: rgb(95, 121, 43); */
+	background: url('../img/back.jpg') 0 0 / cover no-repeat;
 	min-height: 100%;
 	height: 1px;
+	font-family: 'Klee One', cursive;
 }
 
 .-container {
@@ -105,24 +109,74 @@ h6 {
 
 .-close {}
 
-.-button {}
+.-button {
+	padding: 5px;
+	color: var(--text);
+	font-size: 16px;
+	background: linear-gradient(to right, #2c3e50, #3498db, #2c3e50);
+	background-size: 200%;
+	transition: all 0.3s;
+	padding: 10px 20px;
+	border-radius: 10px;
+}
 
+.-button:hover{
+	background-position: 100%;
+}
+
+input:focus {
+	outline: none;
+}
 /* popup */
 
 .popup {
-	display: none;
-	
+	visibility: hidden;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width:100%;
+	height: 100%;
+	background: linear-gradient(152deg, #5c258def, #4389a2ee);
+	overflow-y: auto;
+	border-radius: 5px;
+	transition: all 1s;
+	transform-origin: top;
+	transform: rotateX(90deg);
 }
 
-.popup__flex {}
+.popup.open{
+	visibility: visible;
+	opacity: 1;
+	transform: rotateX(0deg);
+}
 
-.popup__block {}
+.popup__flex {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 
-.popup__header {}
+.popup__block {
+	min-width: 50%;
+	/* width: 50%; */
+	max-width: 100%;
+	padding: 5px;
+}
 
-.popup__title {}
+.popup__header {
+	display: flex;
+	justify-content: space-between;
+	margin: 0px 0px 20px 0px;
+}
 
-.popup__close {}
+.popup__title {
+	margin: 0px 20px 0px 0px;
+}
+
+.popup__close {
+}
 
 .popup__body {}
 
@@ -130,8 +184,8 @@ h6 {
 /* body */
 
 .chat {
-	background-color: rgb(21, 139, 168);
-	border: 1px solid blueviolet;
+	
+	/* border: 1px dashed rgba(137, 43, 226, 0.562); */
 	padding: 10px;
 	max-width: 900px;
 	width: 100%;
@@ -144,22 +198,42 @@ h6 {
 
 .chat__container {
 	height: 100%;
-	max-height: 400px;
-	background-color: #fff;
+	/* max-height: 400px; */
+	/* background-color: #fff; */
 	display: flex;
 	flex-direction: column;
 	height: 100%;
+	position: relative;
+	padding: 10px;
 }
 
 .setting-chat {}
 
-.setting-chat__name {}
+.setting-chat__name {
+	margin: 0px 0px 10px 0px;
+}
 
-.setting-chat__form {}
+.setting-chat__form {
+	display: flex;
+	align-items: stretch;
+	justify-content: space-between;
+}
 
-.setting-chat__line {}
+.setting-chat__line {
+	flex: 1 1 auto;
+	padding: 5px;
+	background: -webkit-linear-gradient(90deg, #edafa1, #6640b883, #643f652f);
+	background: linear-gradient(90deg, #edafa1, #6640b883, #643f652f);
+	border-radius: 10px;
+	margin: 0px 10px 0px 0px;
+}
 
-.setting-chat__input-name {}
+.setting-chat__input-name {
+	height: 100%;
+	width: 100%;
+	background-color:transparent;
+	font-size: 16px;
+}
 
 .setting-chat__button {}
 
@@ -181,17 +255,55 @@ h6 {
 
 .chat__body {
 	flex: 1 1 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+	min-height: 1px;
+	padding: 5px 0;
+}
+
+.chat__content{
+	overflow-y: auto;
+	max-height: 100%;
 }
 
 .chat__massege {}
 
-.massage {}
+.massage {
+	
+	display: flex;
+	flex-direction: column;
+}
 
-.massege__body {}
+.massege__body {
+	max-width: 70%;
+	margin: 0px 0px 10px 0px;
+	width: max-content;
+	padding: 5px;
+	/* background-color: #fff; */
+	background: -webkit-linear-gradient(152deg, #19b7c2b2, #335f998f, #2c577291);
+	background: linear-gradient(152deg, #19b7c2b2, #335f998f, #2c577291);
+	color: var(--text);
+	letter-spacing: 1px;
+	font-weight: 500;
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
+	border-radius: 10px 2px;
+}
+
+.massege__body.massege__body_from{
+	border-radius: 2px 10px;
+	align-self: end;
+	background: -webkit-linear-gradient(152deg, #19c298cb, #337c99b7, #2c7269bb);
+	background: linear-gradient(152deg, #19c298cb, #337c99b7, #2c7269bb);
+}
 
 .massage__name {}
 
-.massage__text {}
+.massage__text {
+	
+}
 
 .massage__time {}
 
@@ -205,12 +317,33 @@ h6 {
 
 .chat__message-line {
 	flex: 1 1 auto;
+	padding: 5px;
+	background: -webkit-linear-gradient(90deg,#edafa1,#6640b883,#643f652f);
+	background: linear-gradient(90deg,#edafa1,#6640b883,#643f652f);
+	border-radius: 10px;
 }
 
 .chat__message {
+	background-color: transparent;
 	width: 100%;
+	height: auto;
+	font-size: 20px;
+
+}
+.chat__message::placeholder{
+	font-family: 'Klee One', cursive;
 }
 
-.chat__message-send {
 
+
+.chat__message-send {
+	/* height: 50px; */
+	align-self: stretch;
+	flex: 0 0 35px;
+	background: url('../img/message.svg') 0 0 / contain no-repeat;
+	transition: all 0.1s;
+}
+
+.chat__message-send:active {
+	scale: 0.9;
 }
