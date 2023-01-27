@@ -1,19 +1,27 @@
 export const UI_ELEMENTS = {
-  MODALS_CONTENT: document.querySelector('.modals__content'),
+  MODALS_CONTENT: document.querySelectorAll('.modals__content'),
   MODALS_SETTINGS_BTN: document.querySelector('.chat__top-btn--setings'),
   MODALS_SETTINGS: document.querySelector('.modals__settings'),
+  MODALS_LOGIN_BTN: document.querySelector('.chat__top-btn--login'),
+  MODALS_LOGIN: document.querySelector('.modals__login'),
   MODALS: document.querySelector('.modals'),
   MODALS_OVERLAY: document.querySelector('.modals__overlay'),
-  MODALS_CLOSE: document.querySelector('.modals__close-btn'),
+  MODALS_CLOSE: document.querySelectorAll('.modals__close-btn'),
   TEMPLATE: document.querySelector('.template'),
   MESSAGE_FORM: document.querySelector('.chat__message-form'),
   MESSAGE_LIST: document.querySelector('.chat__content'),
   MESSAGE_TEXT_VALUE: document.querySelector('.chat__message-input'),
   MESSAGE_WRAPPER: document.querySelector('.chat__content-wrapper'),
+  LOGIN_FORM: document.querySelector('.modals__login-form'),
+  LOGIN_INPUT: document.querySelector('.modals__login-input'),
 };
 
 function showSettingsModal() {
   UI_ELEMENTS.MODALS_SETTINGS.classList.add('modals-show');
+}
+
+function showLoginModal() {
+  UI_ELEMENTS.MODALS_LOGIN.classList.add('modals-show');
 }
 
 export function showModals(e) {
@@ -22,12 +30,16 @@ export function showModals(e) {
     case UI_ELEMENTS.MODALS_SETTINGS_BTN:
       showSettingsModal();
       break;
+    case UI_ELEMENTS.MODALS_LOGIN_BTN:
+      showLoginModal();
+      break;
     default:
       break;
   }
 }
 
 export function closeModals() {
+  UI_ELEMENTS.MODALS_CONTENT.forEach((item) => item.classList.remove('modals-show'));
   UI_ELEMENTS.MODALS_SETTINGS.classList.remove('modals-show');
   UI_ELEMENTS.MODALS.classList.remove('modals-show');
 }
