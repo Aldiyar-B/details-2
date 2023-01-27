@@ -26,7 +26,6 @@ body {
     margin: 0 auto;
     padding-left: 15px;
     padding-right: 15px;
-    /*background-color: aliceblue;*/
 }
 
 .visually-hidden {
@@ -58,7 +57,7 @@ body {
     margin-right: auto;
 }
 
-.main-control__quit {
+.main-control__login {
     border: 1px solid black;
     background-color: white;
     width: 98px;
@@ -151,6 +150,14 @@ body {
     display: none;
 }
 
+.pop-up.show {
+    display: block;
+}
+
+.pop-up__form.center {
+    margin-top: 30%;
+}
+
 .pop-up.active {
     display: block;
 }
@@ -201,10 +208,20 @@ body {
     margin-right: 8px;
 }
 
+.pop-up__get-name.button_under {
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
 .pop-up__form-button {
     width: 30px;
     height: 32px;
     background-color: white;
     border: 1px solid grey;
+}
+
+.pop-up__form-button.button_under_input {
+    width: auto;
+    margin-left: 14px;
 }
 

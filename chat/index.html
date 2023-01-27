@@ -12,7 +12,7 @@
 <div class="main-wrapper">
     <header class="main-control container">
         <input type="button" class="main-control__setting" value="Настройки">
-        <input type="button" class="main-control__quit" value="Выйти">
+        <input type="button" class="main-control__login" value="Войти">
     </header>
     <section class="display-chat container">
         <h1 class="display-chat__title visually-hidden">Секретный чат СтоГрамм</h1>
@@ -29,25 +29,11 @@
             <div class="partner-message">
                 <div class="partner-message__wrapper">
                     <div class="partner-message__name">Собеседник мой:</div>
-                    <div class="partner-message__text">Добрый день!</div>
+                    <div class="partner-message__text"></div>
                 </div>
                 <div class="partner-message__time">18:45</div>
             </div>
         </template>
-        <!--        <div class="partner-message">-->
-        <!--            <div class="partner-message__name">Собеседник мой:</div>-->
-        <!--            <div class="partner-message__text">А это второе и, кажется, оно очень длинное, чтобы поместиться на одной-->
-        <!--                строке-->
-        <!--            </div>-->
-        <!--            <div class="partner-message__time">18:45</div>-->
-        <!--        </div>-->
-        <!--        <div class="my-message">-->
-        <!--            <div class="my-message__wrapper">-->
-        <!--                <div class="my-message__name">Я:</div>-->
-        <!--                <div class="my-message__text">Добрый день!</div>-->
-        <!--            </div>-->
-        <!--            <div class="my-message__time">18:45</div>-->
-        <!--        </div>-->
     </section>
     <section class="handler-form container">
         <form class="form-message">
@@ -71,6 +57,23 @@
             </div>
         </div>
     </div>
+    <template class="pop-up-login-template">
+        <div class="pop-up">
+            <div class="pop-up__container">
+                <div class="pop-up__body">
+                    <div class="pop-up__title">Настройки</div>
+                    <form class="pop-up__form center" id="pop-up__login-form">
+                        <label class="pop-up__label">Почта<br>
+                            <input class="pop-up__get-name button_under" type="text"
+                                   placeholder="введите вашу почту">
+                        </label><br>
+                        <button class="pop-up__form-button button_under_input" type="submit">Получить код</button>
+                    </form>
+                    <div class="pop-up__close">&#10006</div>
+                </div>
+            </div>
+        </div>
+    </template>
 </div>
 <script type="module" src="script.js"></script>
 </body>
