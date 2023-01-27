@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main">
+        <div class="container">
+            <div class="wrapper">
+                <div class="main-chat">
+                    <div class="main-buttons">
+                        <button class="btn-settings main-btn">Настройки</button>
+                        <button class="btn-exit main-btn">Выйти</button>
+                    </div>
+                    <div class="main-screen">
+                        <div class="message-block">
+                            <template id="my_message">
+                                <div class="my_message-block">
+                                    <div class="my_message-wrapper delivered-message_color">
+                                        <p class="my-name-message"></p>
+                                        <span class="my_message_view"></span>
+                                        <p class="time-my-message"></p>
+                                    </div>
+                                </div>
+                            </template>
+                            <template id="other_message">
+                                <div class="other_message-block">
+                                    <div class="other_message-wrapper delivered-message_color">
+                                        <p class="other-name-message"></p>
+                                        <span class="other_message_view"></span>
+                                        <p class="time-message"></p>
+                                    </div>
+                            </div>
+                            </template>
+                        </div>
+                    </div>
+                    <div class="main-bottom bottom">
+                        <form class="main-form">
+                            <input type="text" placeholder="сообщение.." class="bottom-input input">
+                            <button type="submit" class="bottom-send"><img alt="an arrow image to send a picture" src="img/arrow.png" class="img-arrow"></img></button>
+                        </form>
+                    </form>
+                    </div>
+                    <div>
+                        <div class="settings_wrapper">
+                            <div class="block-settings">
+                                <div class="wrapper_settings">
+                                    <div class="settings">Настройки</div>
+                                    <button class="close-window">x</button>
+                                </div>
+                                <div class="name_in_chat">Имя в чате</div>
+                                <div class="name-select_wrapper">
+                                    <form class="settings-form main-bottom">
+                                        <input type="text" class="bottom-input input">
+                                        <img alt="an arrow image to send a picture" class="bottom-send" src="img/arrow.png"></img>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="authorization-wrapper">
+                            <div class="block-authorize">
+                                <div class="wrapper_authorize">
+                                    <div class="authorize">Авторизация</div>
+                                    <button class="close-window">x</button>
+                                </div>
+                                <div class="post">Почта:</div>
+                                <div class="name-select_wrapper">
+                                    <form class="settings-form main-bottom">
+                                        <input type="text" class="bottom-input input">
+                                        <button class="get-code">Получить код</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="confirmation-wrapper">
+                            <div class="block-confirm">
+                                <div class="wrapper_confirm">
+                                    <div class="confirm">Подтверждение</div>
+                                    <button class="close-window">x</button>
+                                </div>
+                                <div class="post">Код:</div>
+                                <div class="name-select_wrapper">
+                                    <form class="settings-form main-bottom">
+                                        <input type="text" class="bottom-input input">
+                                        <button class="get-code">Войти</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./dist/main.js" type="module"></script>
+</body>
+</html>
