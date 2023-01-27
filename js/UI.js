@@ -14,6 +14,7 @@ export const UI_ELEMENTS = {
   MESSAGE_WRAPPER: document.querySelector('.chat__content-wrapper'),
   LOGIN_FORM: document.querySelector('.modals__login-form'),
   LOGIN_INPUT: document.querySelector('.modals__login-input'),
+  LOGIN_FORM_SUCCESSFUL: document.querySelector('.modals__login-successful'),
 };
 
 function showSettingsModal() {
@@ -62,4 +63,17 @@ export function showNewMessage(e) {
   UI_ELEMENTS.MESSAGE_LIST.append(itemMessage);
   e.target.reset();
   scrollListToBottom();
+}
+
+export function showSuccessfulSending(ok) {
+  if (ok) {
+    UI_ELEMENTS.LOGIN_FORM_SUCCESSFUL.textContent = 'Код отправлен';
+    UI_ELEMENTS.LOGIN_FORM_SUCCESSFUL.classList.add('modals__login-successful--green');
+  } else {
+    UI_ELEMENTS.LOGIN_FORM_SUCCESSFUL.textContent = 'Произошла ошибка';
+    UI_ELEMENTS.LOGIN_FORM_SUCCESSFUL.classList.add('modals__login-successful--red');
+  }
+  setTimeout(() => {
+    UI_ELEMENTS.LOGIN_FORM_SUCCESSFUL.textContent = '';
+  }, 10000);
 }

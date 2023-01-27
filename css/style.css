@@ -254,3 +254,16 @@ body {
 .modals-show {
   display: block;
 }
+
+.modals__login-successful {
+  display: block;
+  margin-top: 15px;
+}
+
+.modals__login-successful--green {
+  color: #00a000;
+}
+
+.modals__login-successful--red {
+  color: #ff0000;
+}
