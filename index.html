@@ -10,8 +10,8 @@
 <body>
   <main>
     <header>
-      <button>Настройки</button>
-      <button>Выйти</button>
+      <button class="open-settings">Настройки</button>
+      <button class="open-auth">Выйти</button>
     </header>
     <div class="content"></div>
     <div class="message-box">
@@ -21,6 +21,41 @@
       </form>
     </div>
   </main>
+  <div class="popup-bg">
+    <form class="popup-settings">
+      <p>Настройки</p>
+      <div class="close-popup">x</div>
+      <label>
+        <div class="label-name">
+          Ник в чате
+        </div>
+        <input type="text">
+        <button>=></button>
+      </label>
+    </form>
+    <form class="popup-auth">
+      <p>Авторизация</p>
+      <div class="close-popup">x</div>
+      <label>
+        <div class="label-name">
+          Введите почту
+        </div>
+        <input type="email" required>
+        <button class="get-code-button">Получить код</button>
+      </label>
+    </form>
+    <form class="popup-accept">
+      <p>Подтверждение</p>
+      <div class="close-popup">x</div>
+      <label>
+        <div class="label-name">
+          Введите код, отправленный на почту
+        </div>
+        <input type="text">
+        <button>Подтвердить</button>
+      </label>
+    </form>
+  </div>
   <template id="tmpl">
     <div class="message">123</div>
   </template>
