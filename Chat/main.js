@@ -11,6 +11,12 @@ const FORM = {
     SEND_BTN: document.querySelector('.bottom-send'),
 };
 
+const AUTHORIZATION = {
+    POST_INPUT: document.querySelector('.input-post'),
+    CODE_BTN: document.querySelector('.get-code'),
+    URL: 'https://edu.strada.one/api/user',
+};
+
 POP_UP.BTN_SETTINGS.addEventListener('click', showSettings);
 
 POP_UP.CLOSE_SETTINGS.addEventListener('click', hideSettings);
@@ -20,6 +26,33 @@ FORM.MAIN.addEventListener('submit', (event)=> {
     sendMyMessage();
     FORM.MESSAGE_INPUT.value = '';
 });
+
+AUTHORIZATION.CODE_BTN.addEventListener('click', (event)=> {
+    event.preventDefault();
+    getCode();
+});
+
+async function getCode() {
+    const body = {
+        email: AUTHORIZATION.POST_INPUT.value,
+    }; 
+    try {
+        let response = await fetch(AUTHORIZATION.URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(body),
+        });
+        if(!response.ok) {
+            throw Error(response.statusText);
+        } else {
+            console.log(response);
+        }
+    } catch (err) {
+        alert('Ошибка');
+    }
+}
 
 function showSettings() {
     POP_UP.SETTINGS_BLOCK.classList.add('visible');
@@ -59,6 +92,8 @@ function ShowTime() {
 function showZero(value) {
     return value < 10 ? '0' + value : value;
 }
+
+
 
 
 
