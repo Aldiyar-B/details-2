@@ -1,4 +1,4 @@
-import { fetchAuth } from "./auth.js";
+import { fetchAuth, fetchNameChange } from "./api.js";
 import {
   settingsButton,
   popupCloseButton,
@@ -11,12 +11,19 @@ import {
   authPopUp,
   passwordConformation,
   closeBtnPassword,
+  furtherButton,
+  furtherInput,
+  wrapper,
+  nameInput,
+  nameInputButton,
 } from "./htmlValues.js";
 import { handlePopup } from "./popup.js";
 import { validateEmail } from "./validation.js";
-
+import cookie from "js-cookie";
+let token;
+let name;
 settingsButton.addEventListener("click", () => handlePopup("Настройки"));
-popupCloseButton.addEventListener("click", () => handlePopup());
+popupCloseButton.addEventListener("click", handlePopup);
 inputSubmit.addEventListener("click", addMessage);
 
 function addMessage(e) {
@@ -38,10 +45,11 @@ authButton.addEventListener("click", (e) => {
   if (!validateEmail(authField.value))
     return alert("Please enter valid email!");
   fetchAuth(authField.value)
-    .then(() => {
+    .then((resp) => {
       authPopUp.style.visibility = "hidden";
       passwordConformation.style.visibility = "visible";
       authField.value = "";
+      name = resp.name;
     })
     .catch((e) => alert(e));
 });
@@ -49,4 +57,27 @@ authButton.addEventListener("click", (e) => {
 closeBtnPassword.addEventListener("click", () => {
   authPopUp.style.visibility = "visible";
   passwordConformation.style.visibility = "hidden";
+});
+
+function setInCookie() {
+  const tokenValue = furtherInput.value;
+  if (!tokenValue) return;
+  cookie.set("token", tokenValue, { expires: 1 });
+  token = cookie.get("token");
+}
+furtherButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  setInCookie();
+  furtherInput.value = "";
+  passwordConformation.style.visibility = "hidden";
+  wrapper.style.display = "block";
+  nameInput.value = name;
+});
+nameInputButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  if (!nameInput.value) return alert("Введите имя!");
+  fetchNameChange(nameInput.value, token).then((resp) => {
+    nameInput.value = resp.name;
+    handlePopup();
+  });
 });

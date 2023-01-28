@@ -12,6 +12,11 @@ const wrapper = document.querySelector(".wrapper");
 const authPopUp = document.querySelector(".authorize");
 const passwordConformation = document.querySelector(".password");
 const closeBtnPassword = document.querySelector(".password_close_btn");
+const tokenInput = document.querySelector(".auth_field");
+const furtherButton = document.querySelector(".go_further_button");
+const furtherInput = document.querySelector(".go_further_input");
+const nameInput = document.querySelector(".name_input");
+const nameInputButton = document.querySelector(".name_input_button");
 export {
   popup,
   popupHeader,
@@ -27,4 +32,9 @@ export {
   authPopUp,
   passwordConformation,
   closeBtnPassword,
+  tokenInput,
+  furtherButton,
+  furtherInput,
+  nameInput,
+  nameInputButton,
 };
