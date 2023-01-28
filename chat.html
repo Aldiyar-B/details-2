@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Chat</title>
+    <link rel="stylesheet" href="style-chat.css" />
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+</head>
+<body>
+    <div class="chat">
+    <div class="menu">
+   <button> <a class="setting" href="javascript:PopUpShow()">Setting</a></button>
+    <button>Exit</button>
+    </div>
+    <div class="second">
+        <div class="place">
+            <template id="tmpl">
+                <div><a class="nicnameinchat">Name</a></div>
+            </template>
+        <div class="other-mes">Other: Good evening!</div>
+        <div class="other-mes">Other: Good evening,my dear friend! How are you feeling today? Good evening,my dear friend!</div>
+        <div class="my-mes">Me: Good evening!</div>
+        </div>
+    <form class="tools">
+    <input class="input" type='text' placeholder='Type message'>
+    <button>Send</button>
+    </form>
+    </div>
+    </div>
+    <div class="popup" id="popup1">
+        <div class="popup-content">
+            <p>Авторизация</p>
+            <p>Почта</p>
+            <form class="popup1-form">
+                <input class="email">
+                <button>Получить код</button>
+            </form>
+            <a href="javascript:PopUpShow2()">---></a>
+        </div>
+    </div>
+    <div class="popup" id="popup2">
+        <div class="popup-content">
+            <p>Подтверждение</p>
+            <p>Код</p>
+            <form class="popup-form">
+                <input>
+                <button>Войти</button>
+            </form>
+            <a href="javascript:PopUpShow3()">---></a>
+        </div>
+    </div>
+    <div class="popup" id="popup3">
+        <div class="popup-content">
+        <p>Setting</p>
+        <a class="close" href="javascript:PopUpHide()">x</a>
+        <p>Name in chat</p>
+        <form class="popup-form">
+            <input class='name' placeholder="Name">
+            <button>Admit</button>
+        </form>
+        </div>
+    </div>
+    <script src="./chat.js"></script>
+<script src="http://code.jquery.com/jquery-2.0.2.min.js" ></script>
+<script>
+    $(document).ready(function () {
+        //Скрыть PopUp при загрузке страницы    
+        PopUpHide();
+    });
+    //Функция отображения PopUp
+    function PopUpShow() {
+        $("#popup1").show();
+    }
+     function PopUpShow2() {
+            $("#popup2").show();
+        }
+          function PopUpShow3() {
+                $("#popup3").show();
+            }
+    //Функция скрытия PopUp
+    function PopUpHide() {
+        $("#popup1").hide();
+         $("#popup2").hide();
+          $("#popup3").hide();
+    }
+</script>
+</body>
