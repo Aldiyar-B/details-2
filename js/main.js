@@ -18,7 +18,7 @@ async function getCodeByEmail(e) {
     body: JSON.stringify(body),
   });
   if (response.ok) {
-    showSuccessfulSending(response.ok);
+    showSuccessfulSending();
   }
 }
 

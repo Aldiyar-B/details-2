@@ -65,15 +65,11 @@ export function showNewMessage(e) {
   scrollListToBottom();
 }
 
-export function showSuccessfulSending(ok) {
-  if (ok) {
-    UI_ELEMENTS.LOGIN_FORM_SUCCESSFUL.textContent = 'Код отправлен';
-    UI_ELEMENTS.LOGIN_FORM_SUCCESSFUL.classList.add('modals__login-successful--green');
-  } else {
-    UI_ELEMENTS.LOGIN_FORM_SUCCESSFUL.textContent = 'Произошла ошибка';
-    UI_ELEMENTS.LOGIN_FORM_SUCCESSFUL.classList.add('modals__login-successful--red');
-  }
+export function showSuccessfulSending() {
+  UI_ELEMENTS.LOGIN_FORM_SUCCESSFUL.textContent = 'Код отправлен';
+  UI_ELEMENTS.LOGIN_FORM_SUCCESSFUL.classList.add('modals__login-successful--green');
+
   setTimeout(() => {
     UI_ELEMENTS.LOGIN_FORM_SUCCESSFUL.textContent = '';
-  }, 10000);
+  }, 7000);
 }
