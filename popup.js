@@ -56,7 +56,6 @@ async function postRequest(userMail) {
         });
 
         if (response.ok) {
-            console.log(response.ok);
             UI_POPAP.AUTHORIZATIONS.classList.add('hidden');
             UI_POPAP.CONFIRMATION.classList.remove('hidden');
         }
