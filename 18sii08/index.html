@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Чат</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="top-wrapper">
+        <button class="settings">Настройки</button>
+        <button class="exit">Выйти</button>
+      </div>
+      <div class="messages">
+        <div class="message-wrapper">
+          <div class="send-message">
+            <span class="message">Я: Добрый день!</span>
+            <span class="time">18:45</span>
+          </div>
+          <div class="delivered-messege">
+            <span class="message">Собеседник мой: Добрый день!</span>
+            <span class="time">18:45</span>
+          </div>
+          <div class="delivered-messege">
+            <span class="message"
+              >Собеседник мой: А это второе и, кажется, оно очень длинное, чтобы
+              поместиться на одной строке</span
+            >
+            <span class="time">18:45</span>
+          </div>
+          <div class="send-message">
+            <span class="message">Я: Добрый день!</span>
+            <span class="time">18:45</span>
+          </div>
+          <div class="delivered-messege">
+            <span class="message"
+              >Собеседник мой: А это второе и, кажется, оно очень длинное, чтобы
+              поместиться на одной строке</span
+            >
+            <span class="time">18:45</span>
+          </div>
+          <div class="send-message">
+            <span class="message">Я: Добрый день!</span>
+            <span class="time">18:45</span>
+          </div>
+          <div class="delivered-messege">
+            <span class="message"
+              >Собеседник мой: А это второе и, кажется, оно очень длинное, чтобы
+              поместиться на одной строке</span
+            >
+            <span class="time">18:45</span>
+          </div>
+          <div class="send-message">
+            <span class="message">Я: Добрый день!</span>
+            <span class="time">18:45</span>
+          </div>
+          <div class="delivered-messege">
+            <span class="message"
+              >Собеседник мой: А это второе и, кажется, оно очень длинное, чтобы
+              поместиться на одной строке</span
+            >
+            <span class="time">18:45</span>
+          </div>
+          <div class="send-message">
+            <span class="message">Я: Добрый день!</span>
+            <span class="time">18:45</span>
+          </div>
+        </div>
+      </div>
+      <div class="bottom-wrapper">
+        <form class="message-form">
+          <input type="text" class="message-input" placeholder="сообщение.." />
+          <button class="message-send__button">-></button>
+        </form>
+      </div>
+    </div>
+    <template id="tmpl">
+      <div class="send-message">
+        <span class="message">Я: Добрый день!</span>
+        <span class="time">18:45</span>
+      </div>
+    </template>
+    <template id="popup">
+      <div class="popup">
+        <div class="popup-container">
+          <div class="popup-body">
+            <div class="popup-top">
+              <p class="popup-title"></p>
+              <button class="close_btn">+</button>
+            </div>
+            <p class="form-title"></p>
+            <form class="name-form">
+              <input type="text" class="name-input" />
+              <button class="name-send__button"></button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </template>
+  </body>
+  <script src="/js/index.js" type="module"></script>
+</html>

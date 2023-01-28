@@ -1,0 +1,140 @@
+.wrapper.active{
+    display: none;
+}
+.wrapper{
+    width: 320px;
+    height: 536px;
+    margin: 0 auto;
+    border: 1px solid #000;
+    font-family: 'Roboto', italic;
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+}
+.top-wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+.messages{
+    width: 304px;
+    height: 437px;
+    margin: 8px;
+    border: 1px solid #000;
+    overflow: auto;
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.message-form, .name-form{
+    display: flex;
+    justify-content: space-between;
+}
+.settings{
+    width: 98px;
+    height: 32px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    margin: 8px;
+}
+.exit{
+    width: 66px;
+    height: 32px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    margin: 8px;
+}
+.message-input{
+    width: 267px;
+    height: 32px;
+    border: 1px solid #000000;
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    outline: none;
+}
+.message-send__button, .name-send__button{
+    width: 29px;
+    height: 36px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    margin-right: 6px;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+.delivered-messege{
+    background-color: #E5E5E5;
+    margin: 8px;
+    display: flex;
+    flex-direction: column;
+    float: left;
+
+}
+.send-message{
+    background-color: #F7F7F7;
+    margin: 8px;
+    display: flex;
+    flex-direction: column;
+    float: right;
+}
+.message{
+    margin-top: 8px;
+    margin-right: 8px;
+    margin-left: 8px;
+    margin-bottom: 4px;
+}
+.time{
+    font-family: 'Roboto', italic;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+.popup{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: Orgba(0, 0, 0, .8);
+    z-index: 2;
+}
+
+.popup-container{
+    width: 273px;
+    height: 319px;
+    margin: 0 auto;
+    border: 1px solid #000;
+    font-family: 'Roboto', normal;
+    font-weight: 400;
+}
+.popup-body{
+    margin: 8px;
+}
+.popup-top{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+.name-input{
+    width: 207px;
+    height: 32px;
+    border: 1px solid #000000;
+    margin-bottom: 8px;
+    outline: none;
+}
+.close_btn{
+    background-color: transparent;
+    transform: rotate(45deg);
+    border: none;
+    font-family: 'Roboto', normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 70%;
+    color: #000000;
+    cursor: pointer;
+}
