@@ -116,6 +116,21 @@ button {
     border: 1px solid #000;
 }
 
+.authorization {
+    flex-direction: column;
+}
+
+.popup__form-authorization {
+    width: 252px;
+    height: 32px;
+}
+
+.popup__form-btn {
+    width: 120px;
+    height: 34px;
+    margin-top: 7px;
+}
+
 .chat {
     width: 304px;
     height: 437px;

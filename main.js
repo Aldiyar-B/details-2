@@ -1,22 +1,23 @@
-const UI = {
-    INPUT_FORM: document.querySelector('.input__form'),
+const UI_CHAT_PAGE = {
+    FORM: document.querySelector('.input__form'),
     INPUT_FORM_MESSAGE: document.getElementById('message'),
-    CHAT: document.querySelector('.chat'),
+    HISTORY: document.querySelector('.chat'),
     TEMPLATE: document.getElementById('template'),
 };
 
 function createNewMessage(textInput) {
-    if (textInput === '') {
+    let message = textInput.trim();
+    if (message === '') {
         return;
     }
 
     const TIME = newDate();
-    const CLONE = UI.TEMPLATE.content.cloneNode(true);
+    const CLONE = UI_CHAT_PAGE.TEMPLATE.content.cloneNode(true);
 
     CLONE.querySelector('.time').textContent = TIME;
-    CLONE.querySelector('.message__text').textContent = textInput;
+    CLONE.querySelector('.message__text').textContent = message;
 
-    UI.CHAT.prepend(CLONE);
+    UI_CHAT_PAGE.HISTORY.prepend(CLONE);
 }
 
 function newDate() {
@@ -28,11 +29,12 @@ function newDate() {
     return MESSAGE_TIME;
 }
 
-UI.INPUT_FORM.addEventListener('submit', (event) => {
+UI_CHAT_PAGE.FORM.addEventListener('submit', (event) => {
     event.preventDefault();
 
-    const TEXT_INPUT = UI.INPUT_FORM_MESSAGE.value;
-    UI.INPUT_FORM_MESSAGE.value = '';
+    const TEXT_INPUT = UI_CHAT_PAGE.INPUT_FORM_MESSAGE.value;
+
+    UI_CHAT_PAGE.INPUT_FORM_MESSAGE.value = '';
 
     createNewMessage(TEXT_INPUT);
 });
