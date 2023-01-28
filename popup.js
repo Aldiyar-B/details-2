@@ -7,13 +7,14 @@ const BUTTONS = {
 
 const UI_POPAP = {
     WRAPPER: document.querySelector('.wrapper'),
-    AUTHORIZATION: document.getElementById('popupNameAuthorization'),
+    AUTHORIZATIONS: document.getElementById('popupNameAuthorization'),
+    CONFIRMATION: document.getElementById('popupNameConfirmation'),
     E_MAIL: document.querySelector('.e__mail'),
     SETTINGS: document.getElementById('popupNameSetings'),
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-    UI_POPAP.AUTHORIZATION.classList.remove('hidden');
+    UI_POPAP.AUTHORIZATIONS.classList.remove('hidden');
 });
 
 if (BUTTONS.CLOSE.length > 0) {
@@ -45,12 +46,21 @@ async function postRequest(userMail) {
         return;
     }
 
-    let response = await fetch(`https://edu.strada.one/api/user`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json;charset=utf-8',
-        },
-        body: JSON.stringify(`{ email: ${eMail} }`),
-    });
-    console.log(response.ok);
+    try {
+        let response = await fetch(`https://edu.strada.one/api/user`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email: eMail }),
+        });
+
+        if (response.ok) {
+            console.log(response.ok);
+            UI_POPAP.AUTHORIZATIONS.classList.add('hidden');
+            UI_POPAP.CONFIRMATION.classList.remove('hidden');
+        }
+    } catch (error) {
+        alert(`Ошибка:${error}`);
+    }
 }
