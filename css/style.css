@@ -132,20 +132,20 @@ input:focus {
 .popup {
 	visibility: hidden;
 	opacity: 0;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	width:100%;
 	height: 100%;
 	background: linear-gradient(152deg, #5c258def, #4389a2ee);
 	overflow-y: auto;
-	border-radius: 5px;
+	/* border-radius: 5px; */
 	transition: all 1s;
 	transform-origin: top;
 	transform: rotateX(90deg);
 }
 
-.popup.open{
+.popup_open{
 	visibility: visible;
 	opacity: 1;
 	transform: rotateX(0deg);
@@ -162,7 +162,8 @@ input:focus {
 	min-width: 50%;
 	/* width: 50%; */
 	max-width: 100%;
-	padding: 5px;
+	padding: 15px;
+	color: var(--text);
 }
 
 .popup__header {
@@ -176,6 +177,7 @@ input:focus {
 }
 
 .popup__close {
+	color: var(--text);
 }
 
 .popup__body {}
@@ -197,13 +199,11 @@ input:focus {
 }
 
 .chat__container {
-	height: 100%;
 	/* max-height: 400px; */
 	/* background-color: #fff; */
 	display: flex;
 	flex-direction: column;
 	height: 100%;
-	position: relative;
 	padding: 10px;
 }
 

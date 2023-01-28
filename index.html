@@ -41,27 +41,24 @@
 					</div>
 					<div class="chat__body">
 						<div class="chat__content">
-							<div class="chat__massege massage">
-								
-								<!-- <template class="chat__template"> -->
+							<template id="message__received" class="chat__template">
+								<div class="chat__massege massage">
 									<div class="massege__body">
 										<div class="massage__name">Я</div>
-										<div class="massage__text"> Добрый день Добрый деньДобрый деньДобрый деньДобрый деньДобрый день Добрый день Добрый день Добрый день Добрый день Добрый день Добрый день Добрый день Добрый день Добрый день</div>
+										<div class="massage__text"> Получил письмо</div>
 										<div class="massage__time">18:45</div>
 									</div>
-								<!-- </template> -->
-							</div>
-							<div class="chat__massege massage">
-								
-								<!-- <template class="chat__template"> -->
+								</div>
+							</template>
+							<template id="message__sent" class="chat__template">
+								<div class="chat__massege massage">
 									<div class="massege__body massege__body_from">
 										<div class="massage__name">Я</div>
-										<div class="massage__text"> ДДобрый день Добрый деньДобрый деньДобрый деньДобрый деньДобрый день Добрый день Добрый день Добрый день Добрый день
-										Добрый день Добрый день Добрый день Добрый день Добрый день</div>
+										<div class="massage__text">Отправил письмо</div>
 										<div class="massage__time">18:45</div>
 									</div>
-								<!-- </template> -->
-							</div>
+								</div>
+							</template>
 						</div>
 					</div>
 					<div class="chat__footer">
@@ -77,6 +74,7 @@
 		</main>
 		<!-- <footer class="footer"></footer> -->
 	</div>
+	<script type="module" src="js/popup.js"></script>
 	<script type="module" src="js/main.js"></script>
 </body>
 </html>
