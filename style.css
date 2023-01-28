@@ -58,7 +58,7 @@ button {
     flex-direction: column;
 }
 
-.popup__hidden {
+.hidden {
     visibility: hidden;
 }
 
@@ -116,11 +116,11 @@ button {
     border: 1px solid #000;
 }
 
-.authorization {
+.form__authorization {
     flex-direction: column;
 }
 
-.popup__form-authorization {
+.e__mail {
     width: 252px;
     height: 32px;
 }
@@ -189,9 +189,4 @@ button {
 
 .sent {
     background-color: #f6f6f6;
-}
-
-.input__form-send {
-    background-image: url();
-    text-align: center;
 }

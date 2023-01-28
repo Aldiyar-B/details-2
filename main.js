@@ -6,7 +6,7 @@ const UI_CHAT_PAGE = {
 };
 
 function createNewMessage(textInput) {
-    let message = textInput.trim();
+    const message = textInput.trim();
     if (message === '') {
         return;
     }
