@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <title>Chat</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="contener">
+            <div class="chat">
+                <header class="header">
+                    <div class="button__settings btn">Настройки</div>
+                    <div class="button__exit btn">Выйти</div>
+                </header>
+                <page class="page-messages">
+                    <div class="message__my"> 
+                        <div class="message__my_item">Привет. Как твои дела? Привет. Как твои дела? Привет. Как твои дела?</div>
+                    </div>
+                    <div class="message__other">
+                        <div class="message__other_item"> Привет. Как твои дела?</div>
+                    </div>
+                    <template class="template">
+                        <div class="message__my"> 
+                            <div class="message__my_item">Привет. Как твои дела? Привет. Как твои дела? Привет. Как твои дела?</div>
+                        </div>
+                    </template>
+
+                </page>
+                <footer class="footer">
+                    <form class="footer__form">
+                        <input type="text" class="footer__message" placeholder="Написать сообщение...">
+                        <button class=" footer__arrow btn ">>></button>
+                    </form>
+                </footer>
+            </div>
+        </div>
+        <div class="popup-settings">
+            <div class="settings__content">
+                <div class="settings__block">
+                    <div class="settings__title">Настройки</div>
+                    <div class="settings__close">+</div>
+                </div>
+                <div class="settings__nickname">Имя в чате:</div>
+                <form action="" class="settings__form">
+                    <input type="text" class="settings__input" placeholder="Введите имя...">
+                    <button class="settings__arrow  ">>></button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="main.js"></script>
+</body>
+</html>
