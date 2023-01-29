@@ -68,7 +68,7 @@ async function authorization()  {
 
     try   {
 
-        let response = await fetch(SERVER_DATA.ENDPOINT, {
+        let response = await fetch(SERVER_DATA.SERVER_URL, {
             method: 'POST',
             headers: {
             'Content-Type': 'application/json;charset=utf-8',
@@ -103,7 +103,7 @@ async function set_name()   {
     user.name = UI_ELEMENTS.SETTINGS_INPUT.value;
     console.log(user)
 
-    let response = await fetch(SERVER_DATA.ENDPOINT, {
+    let response = await fetch(SERVER_DATA.SERVER_URL, {
         method: 'PATCH',
         headers: {
             'Authorization': `Bearer ${Cookies.get('token')}`,
@@ -118,7 +118,7 @@ async function set_name()   {
 
 async function get_name()   {
     console.log('Start')
-    let response = await fetch(`${SERVER_DATA.ENDPOINT}/me`, {
+    let response = await fetch(`${SERVER_DATA.SERVER_URL}/me`, {
         method: 'GET',
         headers: {
             'Authorization': `Bearer ${Cookies.get('token')}`,
