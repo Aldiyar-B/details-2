@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    
+    <main>
+        <section>
+            <div class="chat-container">
+
+                <div class="chat-body">
+                    
+                    <div class="navbar">
+
+                        <div class="settings">
+                            <button id="settings-button">Settings</button>
+                        </div>
+
+                        <div class="exit">
+                            <button>Exit</button>
+                        </div>
+
+                    </div>
+
+                    <div class="messages-body">
+
+                        <template id="send-message-tmp">
+                            <div class="message-block">
+                                <div class="message">
+                                    <div class="text">
+                                        Me: Good morning!
+                                    </div>
+                                    <div class="date">
+                                        18:45
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+
+                        <div class="message-block">
+                            <div class="message">
+                                <div class="text">
+                                    Me: Good morning!
+                                </div>
+                                <div class="date">
+                                    18:45
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="message-from-block">
+                            <div class="message-from">
+                                <div class="text">
+                                    My interlocutor: Good morning!
+                                </div>
+                                <div class="date">
+                                    18:45
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="message-from-block">
+                            <div class="message-from">
+                                <div class="text">
+                                    My interlocutor: А это второе и, кажется, оно очень длинное, чтобы 
+                                    поместиться на одной строке
+                                </div>
+                                <div class="date">
+                                    18:45
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="message-block">
+                            <div class="message">
+                                <div class="text">
+                                    Me: Good morning!
+                                </div>
+                                <div class="date">
+                                    18:45
+                                </div>
+                            </div>
+                        </div>
+    
+                    </div>
+    
+    
+                    <div class="message-send-container">
+
+                        <form action="" id="message-send-form">
+                        <div class="message-send-body">
+                            <input type="text" name="" id="input-message" placeholder="message..">
+                        </div>
+    
+                        <div class="button-send-message">
+                            <button>-></button>
+                        </div>
+                    </form>
+    
+                    </div>
+
+                </div>
+
+                <div class="settings-popup-container popup-hide">
+                    <div class="settings-popup-body">
+                        <div class="settings-popup">
+                            
+                            <div class="navbar-settings">
+                                <div class="settings-text">
+                                    Настройки
+                                </div>
+
+                                <div class="settings-close-button">
+                                    <button id="settings-close-button">x</button>
+                                </div>
+                            </div>
+
+                            <div class="settings-name-text">
+                                Имя в чате
+                            </div>
+
+                            <div class="settings-name-set-container">
+                        
+                                <form action="" id="settings-form">
+                                    <div class="name-set-body">
+                                        <input type="text" name="" id="input-name" placeholder="Steve">
+                                    </div>
+                
+                                    <div class="button-set-name">
+                                        <button>-></button>
+                                    </div>
+                                </form>
+
+                                <button id="get-name-button">Получить имя</button>
+            
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="confirmation-popup-container">
+                    <div class="confirmation-popup-body">
+                        <div class="confirmation-popup">
+                            
+                            <div class="navbar-confirmation">
+                                <div class="confirmation-text">
+                                    Подтверждение
+                                </div>
+
+                                <div class="confirmation-close-button">
+                                    <button id="confirmation-close-button">x</button>
+                                </div>
+                            </div>
+
+                            <div class="confirmation-name-set-container">
+
+                                <div class="code-text">
+                                    Код:
+                                </div>
+                        
+                                <form action="" id="confirmation-form">
+                                    <div class="code-get-body">
+                                        <input type="text" name="" id="input-code" placeholder="">
+                                    </div>
+                
+                                    <div class="button-get-code">
+                                        <button>Войти</button>
+                                    </div>
+                                </form>
+            
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="authorization-popup-container">
+                    <div class="authorization-popup-body">
+                        <div class="authorization-popup">
+                            
+                            <div class="navbar-authorization">
+                                <div class="authorization-text">
+                                    Авторизация
+                                </div>
+
+                                <div class="authorization-close-button">
+                                    <button id="authorization-close-button">x</button>
+                                </div>
+                            </div>
+
+                            <div class="authorization-name-set-container">
+
+                                <div class="email-text">
+                                    Почта:
+                                </div>
+                        
+                                <form action="POST" id="send-email">
+                                    <div class="email-send-body">
+                                        <input type="text" name="" id="input-send-email" placeholder="">
+                                    </div>
+                
+                                    <div class="button-send-email">
+                                        <button>Получить код</button>
+                                    </div>
+                                </form>
+            
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <script defer type="module" src="./js/index.js"></script>
+</body>
+</html>
