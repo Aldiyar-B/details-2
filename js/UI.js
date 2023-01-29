@@ -2,6 +2,8 @@ export const UI_ELEMENTS = {
   MODALS_CONTENT: document.querySelectorAll('.modals__content'),
   MODALS_SETTINGS_BTN: document.querySelector('.chat__top-btn--setings'),
   MODALS_SETTINGS: document.querySelector('.modals__settings'),
+  SETTINGS_FORM: document.querySelector('.modals__settings-form'),
+  SETTINGS_INPUT: document.querySelector('.modals__settings-input'),
   MODALS_LOGIN_BTN: document.querySelector('.chat__top-btn--login'),
   MODALS_LOGIN: document.querySelector('.modals__login'),
   MODALS: document.querySelector('.modals'),
@@ -15,6 +17,10 @@ export const UI_ELEMENTS = {
   LOGIN_FORM: document.querySelector('.modals__login-form'),
   LOGIN_INPUT: document.querySelector('.modals__login-input'),
   LOGIN_FORM_SUCCESSFUL: document.querySelector('.modals__login-successful'),
+  LOGIN_NEXT_BTN: document.querySelector('.modals__login-next-btn'),
+  MODALS_CONFIRMATIONS: document.querySelector('.modals__confirmation'),
+  CONFIRMATION_FORM: document.querySelector('.modals__confirmation-form'),
+  CONFIRMATION_INPUT: document.querySelector('.modals__confirmation-input'),
 };
 
 function showSettingsModal() {
@@ -25,6 +31,11 @@ function showLoginModal() {
   UI_ELEMENTS.MODALS_LOGIN.classList.add('modals-show');
 }
 
+function showConfirmationModal() {
+  UI_ELEMENTS.MODALS_LOGIN.classList.remove('modals-show');
+  UI_ELEMENTS.MODALS_CONFIRMATIONS.classList.add('modals-show');
+}
+
 export function showModals(e) {
   UI_ELEMENTS.MODALS.classList.add('modals-show');
   switch (e.target) {
@@ -33,6 +44,9 @@ export function showModals(e) {
       break;
     case UI_ELEMENTS.MODALS_LOGIN_BTN:
       showLoginModal();
+      break;
+    case UI_ELEMENTS.LOGIN_NEXT_BTN:
+      showConfirmationModal();
       break;
     default:
       break;
