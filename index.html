@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>To Do UI</title>
+	<link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+	<main>
+		<header>
+			<button>Настройки</button>
+			<button>Выйти</button>
+		</header>
+		<div class="content"></div>
+		<div class="message-box">
+			<form class="message-form">
+				<input class="message-text" type="text" placeholder="сообщение...">
+				<button class="message-btn" type="submit">=></button>
+			</form>
+		</div>
+	</main>
+	<template id="message-template">
+		<div class="message message-my">
+			<span class="message-username"></span>
+			<span class="message-email"></span>
+			<p class="message-text"></p>
+		</div>
+	</template>
+	<template id="message-template">
+		<div class="message message-other">
+			<span class="message-username"></span>
+			<span class="message-email"></span>
+			<p class="message-text"></p>
+		</div>
+	</template>
+
+
+</body>
+<script src="main.js"></script>
+<!-- СВЕРХУ БЫЛО /MAIN.JS -->
+
+</html>
