@@ -11,10 +11,10 @@
 
 <body>
 
-	<main>
+	<div class="chat">
 		<header>
-			<button>Настройки</button>
-			<button>Выйти</button>
+			<button id="settings">Настройки</button>
+			<button id="exit">Выйти</button>
 		</header>
 		<div class="content"></div>
 		<div class="message-box">
@@ -23,21 +23,50 @@
 				<button class="message-btn" type="submit">=></button>
 			</form>
 		</div>
-	</main>
+	</div>
+	<div class="popup1">
+		<div class="popup1-content">
+			<div class="popup1-body">
+				<div class="popup1-header">
+					<p>Авторизация</p>
+					<button id="close-popup1">x</button>
+				</div>
+				<div class="popup1-form">
+					<p>Почта:</p>
+					<input class="popup1-text" type="text">
+				</div>
+				<div class="popup1-buttons">
+					<button id="getCode">Получить код</button>
+					<button id="enterCode">Ввести код</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="popup2" class="popup2">
+		<div class="popup2-content">
+			<div class="popup2-body">
+				<div class="popup2-header">
+					<p>Подтверждение</p>
+					<button id="close-popup2">&times;</button>
+				</div>
+				<div class="popup2-form">
+					<p>Код:</p>
+					<input class="popup2-text" type="text">
+				</div>
+				<div class="popup2-buttons">
+					<button id="enter">Войти</button>
+				</div>
+			</div>
+		</div>
+	</div>
 	<template id="message-template">
 		<div class="message message-my">
 			<span class="message-username"></span>
 			<span class="message-email"></span>
-			<p class="message-text"></p>
+			<p class="message-template-text"></p>
 		</div>
 	</template>
-	<template id="message-template">
-		<div class="message message-other">
-			<span class="message-username"></span>
-			<span class="message-email"></span>
-			<p class="message-text"></p>
-		</div>
-	</template>
+
 
 
 </body>
