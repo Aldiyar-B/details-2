@@ -1,5 +1,6 @@
-const POP_UP = {
+import Cookies from 'js-cookie'
 
+const POP_UP = {
 	AUTHORIZATION: document.querySelector('.popup1'),
 	CODE: document.getElementById('popup2')
 	/* 	SETTINGS_BLOCK: document.querySelector('.settings_wrapper'),
@@ -21,13 +22,12 @@ messageForm.addEventListener('submit', function (event) {
 
 	let newMessage = document.querySelector('.message-text').value;
 	message.text = newMessage;
-	console.log(message)
 	sendMessage(message);
 })
 
 function sendMessage(message) {
 	console.log(message)
-	messageElement.querySelector('.message-username').textContent = message.username;
+	messageElement.querySelector('.message-username').textContent = message.email;
 /* 	messageElement.querySelector('.message-email').textContent = message.email;
  */	messageElement.querySelector('.message-template-text').textContent = message.text;
 	/* 	let room = document.createElement('div');
@@ -54,6 +54,7 @@ closePopUp1.addEventListener('click', function () {
 	POP_UP.AUTHORIZATION.style.display = 'none';
 })
 
+
 //fetch запросы
 const getCodeButton = document.getElementById('getCode')
 const emailForm = document.querySelector('.popup1-text')
@@ -69,6 +70,8 @@ getCodeButton.addEventListener('click', async function () {
 	});
 	if (response.ok) {
 		alert('is good');
+		message.email = email;
+		message.username = email;
 	} else {
 		alert('Ошибка HTTP: ' + response.status)
 	}
@@ -83,13 +86,54 @@ openPopupBtn.addEventListener('click', function () {
 	POP_UP.CODE.style.display = 'block';
 });
 
-const closePopUp2 = document.getElementById('enter');
-const closePopUp22 = document.getElementById('close-popup2');
+const closePopUp2 = document.getElementById('close-popup2');
+
 closePopUp2.addEventListener('click', function () {
 	POP_UP.CODE.style.display = 'none';
 });
-closePopUp22.addEventListener('click', function () {
+
+
+// code
+
+const enterTheCode = document.getElementById('enter');
+enterTheCode.addEventListener('click', function () {
+	const code = document.querySelector('.popup2-text').value;
+	Cookies.set('token', code);
+
 	POP_UP.CODE.style.display = 'none';
+	POP_UP.AUTHORIZATION.style.display = 'none';
+
+
+	setInCookie();
 });
 
 
+// отправляем PATCH-запрос с токеном в заголовке Authorization
+
+function setInCookie() {
+	const token = Cookies.get('token')
+	fetch('https://edu.strada.one/api/user', {
+		method: 'PATCH',
+		headers: {
+			'Content-Type': 'application/json',
+			'Authorization': `Bearer ${token}`
+		},
+		body: JSON.stringify({ name: 'new-name' })
+	}).then(
+		response => {
+			if (response.ok) {
+				console.log(response)
+				alert("awesome");
+			}
+		}
+	).catch(error => {
+		alert('error:' + error)
+	})
+
+	fetch('https://edu.strada.one/api/user/me', {
+		method: 'GET',
+		headers: {
+			'Authorization': `Bearer ${token}`
+		}
+	});
+}
