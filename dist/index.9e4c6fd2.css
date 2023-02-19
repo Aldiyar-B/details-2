@@ -143,4 +143,21 @@ header {
   margin-left: 120px;
 }
 
+.own-message {
+  color: #fff;
+  text-align: right;
+  background-color: #0084ff;
+  border: 1px solid #050571;
+}
+
+.other-message {
+  text-align: left;
+  background-color: pink;
+  border: 1px solid #db7093;
+}
+
+.message-template-text {
+  border-radius: 300px;
+}
+
 /*# sourceMappingURL=index.9e4c6fd2.css.map */

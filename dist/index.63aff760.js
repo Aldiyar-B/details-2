@@ -568,29 +568,32 @@ const content = document.querySelector(".content");
 const template = document.getElementById("message-template");
 const messageElement = template.content.cloneNode(true);
 const message = {
-    username: "User1",
-    email: "user1@example.com",
-    text: "Hello, how are you?"
+    user: {
+        name: "User1",
+        email: "user1@example.com"
+    },
+    text: "Hello"
 };
 const messageForm = document.querySelector(".message-form");
 messageForm.addEventListener("submit", function(event) {
     event.preventDefault();
     let newMessage = document.querySelector(".message-text").value;
     message.text = newMessage;
+    socket.send(JSON.stringify({
+        text: newMessage
+    }));
     sendMessage(message);
 });
 function sendMessage(message) {
-    console.log(message);
-    messageElement.querySelector(".message-username").textContent = message.email;
-    /* 	messageElement.querySelector('.message-email').textContent = message.email;
- */ messageElement.querySelector(".message-template-text").textContent = message.text;
-    /* 	let room = document.createElement('div');
-			let shape = `
-				<div>${message.username}:</div>
-				<div>${message.text}</div>
-		`;
-			room.innerHTML = shape;  */ let newEl = messageElement.cloneNode(true);
-    content.append(newEl);
+    const email = (0, _jsCookieDefault.default).get("email");
+    /* 	console.log(message)
+	 */ let newEl = messageElement.cloneNode(true);
+    if (message.user.email == email) newEl.querySelector(".message").classList.add("own-message");
+    else /* 		console.log('no oOKOKOOK')
+ */ newEl.querySelector(".message").classList.add("other-message");
+    newEl.querySelector(".message-template-text").textContent = message.text;
+    newEl.querySelector(".message-username").textContent = message.user.name;
+    content.prepend(newEl);
 }
 // POP_UP_1
 const exitButton = document.getElementById("exit");
@@ -617,8 +620,9 @@ getCodeButton.addEventListener("click", async function() {
     });
     if (response.ok) {
         alert("is good");
-        message.email = email;
-        message.username = email;
+        message.user.email = email;
+        message.user.name = email;
+        console.log(message);
     } else alert("Ошибка HTTP: " + response.status);
 });
 // POP_UP_2
@@ -653,18 +657,62 @@ function setInCookie() {
         })
     }).then((response)=>{
         if (response.ok) {
+            chatHistory();
             console.log(response);
             alert("awesome");
+            chatHistory();
         }
     }).catch((error)=>{
         alert("error:" + error);
     });
     fetch("https://edu.strada.one/api/user/me", {
+        method: "GET",
         headers: {
             "Authorization": `Bearer ${token}`
         }
     });
 }
+function chatHistory() {
+    const token = (0, _jsCookieDefault.default).get("token");
+    if (!token) {
+        alert("Токена нет");
+        return;
+    }
+    url = "https://edu.strada.one/api/messages/";
+    fetch(url, {
+        method: "GET",
+        headers: {
+            "Authorization": `Bearer ${token}`
+        }
+    }).then((response)=>{
+        return response.json();
+    }).then((chatHistory)=>{
+        console.log(chatHistory);
+        for(let key in chatHistory)if (Array.isArray(chatHistory[key])) chatHistory[key].forEach(function(item) {
+            /* 					console.log(item.user.email)
+					 */ sendMessage(item);
+        });
+    }).catch((error)=>{
+        alert(error);
+    });
+}
+const token = (0, _jsCookieDefault.default).get("token");
+const socket = new WebSocket(`wss://edu.strada.one/websockets?${token}`);
+// отправка сообщения из формы
+document.querySelector(".message-text").onsubmit = function() {
+    let outgoingMessage = this.message.value;
+    socket.send(JSON.stringify({
+        text: outgoingMessage
+    }));
+    return false;
+};
+// получение сообщения 
+socket.onmessage = function(event) {
+    console.log("WebSocket message received: ", event.data);
+    const message = JSON.parse(event.data);
+    // Добавляем полученное сообщение в чат
+    sendMessage(message);
+};
 
 },{"js-cookie":"c8bBu","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"c8bBu":[function(require,module,exports) {
 (function(global, factory) {

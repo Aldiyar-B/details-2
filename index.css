@@ -146,3 +146,25 @@
 .popup2-header button {
 	margin-left: 120px;
 }
+.message{
+	
+	}
+.own-message  {
+	background-color: #0084ff;
+	border: rgb(5, 5, 113) 1px solid;
+
+	color: white;
+	text-align: right;
+}
+
+.other-message  {
+	background-color: pink;
+	border: palevioletred 1px solid;
+
+	text-align: left;
+}
+
+.message-template-text{
+		border-radius: 300px;
+
+}
